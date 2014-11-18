@@ -29,6 +29,7 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'bootstrap-sass', '~> 3.3.0'
 gem 'autoprefixer-rails'
+gem 'devise', '>= 3.2.4'
 
 gem 'will_paginate', '~> 3.0.7'
 
