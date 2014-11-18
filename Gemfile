@@ -30,6 +30,8 @@ gem 'jbuilder', '~> 1.2'
 gem 'bootstrap-sass', '~> 3.3.0'
 gem 'autoprefixer-rails'
 
+gem 'will_paginate', '~> 3.0.7'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
