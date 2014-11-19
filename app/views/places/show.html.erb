@@ -9,29 +9,34 @@
 			height: 300px;
 		}
 	</style>
-  	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+	<% if @place.latitude.present? && @place.longitude.present? %>
+	  	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
 
-	<script>
-		function initialize() {
-			var myLatlng = new google.maps.LatLng(-25.363882, 131.044922);
-			var mapOptions = {
-				zoom: 4,
-				center: myLatlng
-			};
-			var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+		<script>
+			function initialize() {
+				var myLatlng = new google.maps.LatLng(<%= @place.latitude %>,<%= @place.longitude %>);
+				var mapOptions = {
+					zoom: 12,
+					center: myLatlng
+				};
+				var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
-			var marker = new google.maps.Marker({
-				postion: myLatlng,
-				map: map,
-				title: 'Hello World!'
-			});
-		}
+				var marker = new google.maps.Marker({
+					postion: myLatlng,
+					map: map,
+					title: 'Hello World!'
+				});
+			}
 
-	google.maps.event.addDomListener(window, 'load', initialize);
 
-	</script>
+		google.maps.event.addDomListener(window, 'load', initialize);
 
-	<div id="map-canvas"></div>
+		</script>
+
+		<div id="map-canvas"></div>
+	<% end %>
+
+	<br />
 
 	<div class="pull-right">
 		<% if current_user && current_user == @place.user %>
