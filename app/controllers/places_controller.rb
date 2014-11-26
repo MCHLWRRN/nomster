@@ -1,3 +1,6 @@
+# Load Photo class at beginning of file - check with Ken
+class Photo; end
+
 class PlacesController < ApplicationController
 	before_action :authenticate_user!, :only => [:new, :create, :edit, :update, :destroy]
 
