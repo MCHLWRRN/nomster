@@ -20,6 +20,13 @@
 		</div>
 		<% end %>
 
+
+		<div class="booyah-box col-xs-10 col-xs-offset-1">
+			<% if place.photos.last.present? && place.photos.last.picture.present? %>
+				<%= image_tag place.photos.picture.last %>
+			<% end %>
+		</div>
+
 	</div>
 
 	<hr />
