@@ -63,9 +63,3 @@ class PlacesController < ApplicationController
 	end
 
 end
-
-#class PlacesController < ApplicationController
-	#def index
-	#	@places = Place.all
-	#end
-#end 
