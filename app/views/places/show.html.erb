@@ -95,3 +95,9 @@
 	</div>
 <% end %>   	
 
+<div class="clear"></div>
+<div class="pull-right">
+<%= simple_form_for @photo, :url => '#' do |f| %>
+	<%= f.submit "Add a Photo", :class => 'btn btn-primary' %>
+<% end %>
+</div>
