@@ -138,5 +138,6 @@
 <div class="booyah-box col-xs-10 col-xs-offset-1">
 	<% @place.photos.each do |photo| %>
 	 <%= image_tag photo.picture %>
+	 <%= image_tag photo.picture.thumb %>
 	<% end %>
 </div>
