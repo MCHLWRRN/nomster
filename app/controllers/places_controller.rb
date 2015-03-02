@@ -2,7 +2,16 @@ class PlacesController < ApplicationController
 	before_action :authenticate_user!, :only => [:new, :create, :edit, :update, :destroy]
 
 	def index
-		@places = Place.paginate(:page => params[:page], :per_page => 5)
+		# @places = Place.paginate(:page => params[:page], :per_page => 5)
+		if params[:user_id]
+			@places = Place.where(:user_id => params[:user_id])
+		else
+			@places = Place.all
+		end
+		respond_to do |format|
+    		format.html
+    		format.json { render json: @places }
+  		end
 	end
 
 	def new

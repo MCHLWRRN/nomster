@@ -4,6 +4,19 @@
 	<br/><br/>
 	<p><%= @place.description %></p>
 
+	<div id="places2"></div>
+
+	<script>
+		$(function(){
+			$.get("/places.json", function(data){
+				console.log(data)
+				var firstPlace = data[1];
+				var firstPlaceHTML = "<h2>" + firstPlace.name + "</h2>" + "<p>" + firstPlace.description + "</p>";
+				$('#places2').html(firstPlaceHTML);
+			});
+		});
+	</script>
+
 	<style>
 		#map-canvas {
 			height: 300px;
